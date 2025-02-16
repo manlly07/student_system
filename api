@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "4a770e0f-9a64-4c15-8cef-5ddf1088c9c9",
+		"name": "student_support_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31696884"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"student1@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"student\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BE_URL}}auth/login",
+							"host": [
+								"{{BE_URL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"name\": \"Nguyễn Văn A\",\r\n//   \"email\": \"student1@example.com\",\r\n//   \"password\": \"123456\",\r\n//   \"role\": \"student\"\r\n// }\r\n\r\n{\r\n  \"name\": \"Thầy Dũng\",\r\n  \"email\": \"lecturer1@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"lecturer\",\r\n  \"department\": \"Computer Science\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BE_URL}}auth/register",
+							"host": [
+								"{{BE_URL}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lecturers",
+			"item": [
+				{
+					"name": "free-time",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BE_URL}}lecturers/1/free-time",
+							"host": [
+								"{{BE_URL}}lecturers"
+							],
+							"path": [
+								"1",
+								"free-time"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BE_URL}}lecturers/1/free-time",
+							"host": [
+								"{{BE_URL}}lecturers"
+							],
+							"path": [
+								"1",
+								"free-time"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
